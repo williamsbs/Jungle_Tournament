@@ -6,12 +6,17 @@ const cookieParser = require('cookie-parser');
 const http = require('http');
 
 //-----IMPORT LOCAL------------------------------------------------------------------------------------------
+
 const index = require('./routes/index');
+const db = require("./database/database");
+
 
 //------VARIABLE GLOBALE-------------------------------------------------------------------------------------
+
 const app = express();
 const port = 8080;
-var server = http.createServer(app);
+const server = http.createServer(app);
+
 //----VIEW ENGINE--------------------------------------------------------------------------------------------
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
