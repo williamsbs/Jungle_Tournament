@@ -1,0 +1,251 @@
+#players h3 {
+    font-size: 14px;
+}
+
+
+#players .players_menu a {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+}
+
+#players .players_menu a span {
+    color: #fff;
+    display: inline-block;
+    margin: 0 2px;
+}
+#players .players_menu a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+#players .players_menu a.active {
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+#players .players_section {
+    display: none;
+}
+#players .players_section.active {
+    display: block;
+}
+.feature_cover {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    width: 93%;
+    height: 100%;
+    z-index: 99;
+    background: rgba(47, 59, 67, 0.92);
+}
+.feature_cover p {
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    left: 50%;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+#viewer.not_published .content,
+.league .game {
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+.league .house_wrapper {
+    margin-bottom: 20px;
+}
+.league .group_wrapper:not(:first-child) {
+    padding-top: 20px;
+}
+.league .round_titles {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.league .round_titles + .tree_wrapper {
+    margin-left: 20px;
+}
+.league .round_titles.floating {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 20px;
+}
+.league .round_titles.floating + .tree_wrapper {
+    padding-top: 57px;
+}
+.league .round_titles .round_title {
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    padding: 7px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0 1px 0 0;
+}
+.league .tree_group {
+    float: left;
+    position: relative;
+    padding-right: 39px;
+}
+.league .tree_group.floating_titles {
+    padding-top: 40px;
+}
+.league .tree_group.first .border {
+    padding-left: 0;
+    margin-left: 0;
+}
+.league .tree_group.pre .game .after {
+    display: block;
+    background: #ccc;
+    position: absolute;
+    left: 100%;
+    margin-left: 21px;
+    width: 20px;
+    height: 1px;
+    top: 50%;
+    margin-top: -20px;
+}
+.league .game .after,
+.league .tree_group.double_finals .across,
+.league .tree_group.finals .across,
+.league .tree_group.loser_final .across,
+.league .tree_group.loser_tree .across,
+.league .tree_group.winner_final .across {
+    display: none;
+}
+.league .tree_group.pre .border {
+    padding-left: 0;
+    margin-left: 0;
+}
+.league .tree_group.pre .across {
+    height: 20px !important;
+    margin-top: -20px;
+}
+.league .tree_group.pre .game_wrapper.second .across {
+    bottom: auto;
+    top: 50%;
+}
+.league .tree_group.finals .border,
+.league .tree_group.loser_final .border,
+.league .tree_group.winner_final .border {
+    padding-right: 0 !important;
+}
+.league .tree_group.double_finals .border {
+    margin-left: -40px;
+}
+.league .game_wrapper {
+    position: relative;
+}
+.league .game_wrapper .across {
+    width: 1px;
+    background: #ccc;
+    position: absolute;
+    left: 100%;
+    margin-left: 20px;
+    top: 50%;
+    height: 100%;
+}
+.league .game_wrapper.second .across {
+    top: auto;
+    bottom: 50%;
+}
+
+.game {
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 160px;
+    margin: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+
+.player {
+    padding: 5px 0;
+    height: 25px;
+    position: relative;
+}
+
+
+
+
+.player.winner {
+    font-weight: 700;
+    color: gold;
+}
+
+
+
+
+.league .game .player .thumb {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    height: 25px;
+    width: 25px;
+    background: center center no-repeat;
+    background-size: cover;
+}
+.league .game .player .thumb + span {
+    padding-left: 35px;
+}
+.league .game .player span {
+    display: inline-block;
+    margin: 1px 0 0;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding: 0 35px 0 10px;
+    box-sizing: border-box;
+}
+.score {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 6px 3px;
+    border-left: 1px solid #ccc;
+    width: 25px;
+    text-align: center;
+    font-size: 12px;
+    min-height: 35px;
+    box-sizing: border-box;
+}
+.league .game .border {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: #ccc;
+    padding: 0 21px 0 20px;
+    height: 1px;
+    margin-left: -20px;
+}
+
+@media screen and (min-width: 800px) {
+    .league {
+        /*position: relative !important;*/
+        display: flex;
+        justify-content: center;
+        /*width: 100% !important;*/
+        /*padding-left: 25%;*/
+        box-sizing: border-box !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .league {
+        position: relative !important;
+        /*display: flex;*/
+        /*justify-content: center;*/
+        width: 100% !important;
+        /*padding-left: 25%;*/
+        box-sizing: border-box !important;
+    }
+}

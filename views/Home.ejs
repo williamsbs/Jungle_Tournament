@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>March Madness Stock Matchup</title>
+
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+    <!--<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--<title>Brackets Ninja | Create HTML5 brackets for leagues, championships, and tournaments online</title>-->
+    <!--<meta name="description" content="Brackets Ninja - Create your own brackets, leagues, and tournaments on-the-fly">-->
+    <!--<meta name="keywords" content="Brackets Ninja, Brackets, Leagues, Tournaments, Manage online tournaments, Manage online league, Free brackets generator, create brackets online, manage tournament online, Create bracket in 2 minutes, Web Generator, Daniel Sternlicht">-->
+    <!--<link rel="SHORTCUT ICON" href="https://cdn.bracketsninja.com/public/favicon.ico">-->
+    <!--<meta property="og:image" content="https://cdn.bracketsninja.com/public/public_icon.png">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">-->
+    <link rel="stylesheet" href="../assets/css/styleBrackets.css">
+
+</head>
+
+<body>
+<header class="hero">
+    <div class="hero-wrap">
+        <p class="intro" id="intro">Jungle</p>
+        <h1 id="headline">Tournament</h1>
+        <p class="year"><i class="fa fa-star"></i> 2019 <i class="fa fa-star"></i></p>
+        <!--<p>Ballin' Outta Control</p>-->
+    </div>
+</header>
+<!--<div id="viewer" ng-style="{backgroundColor: (settings.colors.transparent ? &#39;transparent&#39; : &#39;#&#39; + settings.colors.background), backgroundImage: (settings.colors.transparent ? &#39;none&#39; : &#39;url(&#39; + settings.colors.backgroundImage + &#39;)&#39;)}" ng-class="{withSub: currentMenu, manageMode: wizardMode == &#39;manage&#39;}" style="width: 1827px; background-color: rgb(17, 17, 17); background-image: url(&quot;&quot;);" class="">-->
+    <!-- ngIf: settings.showTitle -->
+    <h2 ng-if="settings.showTitle" ng-style="{color: &#39;#&#39; + settings.colors.titles}" class="ng-binding ng-scope" style="color: rgb(255, 255, 255);">Jungle Rumble</h2>
+    <!-- end ngIf: settings.showTitle --><!-- ngIf: settings.enableVoting -->
+    <div class="league">
+        <!-- ngRepeat: group in groups -->
+        <div class="group_wrapper ng-scope" ng-style="{width: allGamesWidth + &#39;px&#39;}" ng-repeat="group in groups" style="width: 820px;">
+            <!-- ngIf: settings.showRoundTitle && group.groupType !== 'loser_round' -->
+            <div class="tree_wrapper clearfix">
+                <div class="tree_group pre  pre  ng-valid" ng-class="{with_dates: settings.showDates}" tree="" ng-model="group.tree" players="group.players - group.preGamesPlayers" settings="settings" group-type="group.groupType">
+                    <!-- ngRepeat: game in tree.games -->
+                    <%for(let i = 0; i< 4;i++){ %>
+                    <div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix winner" data-id="07bfcee64d9e10dfd63962fe84ea19fa" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}" style="
+                                        border: 2px solid gold;
+                                        ">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="Kangourou" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Kangourou</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="e7bad49618b20cbc21d0184f2e8a83ff" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="Gorille" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;"><del>Gorille</del></span>
+                                <div style="border-left-color: rgb(51, 51, 51); width: 35px;" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" class="score ng-binding">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: gold; border: 0.5px solid gold"></div>
+                            <div style="border: 0.5px solid gold;background-color: gold;" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" class="after"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: gold; border: 0.5px solid gold"></div>
+                    </div>
+                    <%}%>
+                    <!-- end ngRepeat: game in tree.games -->
+                    <!--<div class="game_wrapper ng-scope second" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">-->
+                        <!--<div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">-->
+                            <!--<div class="player clearfix" data-id="25e8b606e5771e7761019b5a627aedd9" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player1).image &ndash;&gt;<span title="Jaguar" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Jaguar</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="player clearfix" data-id="a9b119b967472f010f7b3d3ea05ba894" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player2).image &ndash;&gt;<span title="Crocodile" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Crocodile</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--<div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--&lt;!&ndash; ngIf: settings.showDates && game.date &ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; end ngRepeat: game in tree.games &ndash;&gt;-->
+                    <!--<div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">-->
+                        <!--<div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">-->
+                            <!--<div class="player clearfix" data-id="09b6e9470245cadfb33eb0ef64b1556e" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player1).image &ndash;&gt;<span title="Rhinocéros" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Rhinocéros</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="player clearfix" data-id="db83d19247fb5eb6f0aa7a99c8d27834" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player2).image &ndash;&gt;<span title="Taureau" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Taureau</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--<div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--&lt;!&ndash; ngIf: settings.showDates && game.date &ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                    <!--</div>-->
+                    <!-- end ngRepeat: game in tree.games -->
+                    <!--<div class="game_wrapper ng-scope second" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">-->
+                        <!--<div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">-->
+                            <!--<div class="player clearfix" data-id="3d4cfb1ade8ddc7c6675dda2df7006c5" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player1).image &ndash;&gt;<span title="Lion" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Lion</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="player clearfix" data-id="b5d144f4146f860ff74bd21096881d13" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">-->
+                                <!--&lt;!&ndash; ngIf: PlayerService.getPlayerById(game.player2).image &ndash;&gt;<span title="Girafe" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Girafe</span>-->
+                                <!--<div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
+                            <!--</div>-->
+                            <!--<div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--<div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                            <!--&lt;!&ndash; ngIf: settings.showDates && game.date &ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>-->
+                    <!--</div>-->
+                    <!-- end ngRepeat: game in tree.games -->
+                </div>
+                <div class="tree_group first  first  ng-valid" ng-class="{with_dates: settings.showDates}" tree="" ng-model="tree.subtree" players="players" settings="settings" group-type="groupType">
+                    <!-- ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Kangourou</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="ea33992abb97bbdba868246b3776f27f" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="Ours  ( Grizzli )" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Ours  ( Grizzli )</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope second" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="c37f36d5d47135e73dd0dba31c9cf9ef" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="Buffle" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Buffle</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="5d4342e1d56232808a22cfe12229e370" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="Bison" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Bison</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope second" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 90px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="24b67a79ce42e68443df72f6a3708048" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="Hippopotame" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">Hippopotame</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                </div>
+                <div class="tree_group     ng-valid" ng-class="{with_dates: settings.showDates}" tree="" ng-model="tree.subtree" players="players" settings="settings" group-type="groupType">
+                    <!-- ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 180px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope second" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 180px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                </div>
+                <div class="tree_group finals  finals  ng-valid" ng-class="{with_dates: settings.showDates}" tree="" ng-model="tree.subtree" players="players" settings="settings" group-type="groupType">
+                    <!-- ngRepeat: game in tree.games -->
+                    <div class="game_wrapper ng-scope" ng-repeat="game in tree.games" ng-style="boxStyles" ng-class="{second: $index % 2 !== 0}" style="height: 360px; width: 160px;">
+                        <div class="game ng-isolate-scope" voting="tree.voting" settings="settings" game="game" ng-style="{color: &#39;#&#39; + settings.colors.text, background: &#39;#&#39; + settings.colors.cells, borderColor: &#39;#&#39; + settings.colors.borders, width: settings.cellsWidth + &#39;px&#39;}" ng-class="{hovered: hoveredItemId == game.id, hasWinner: game.winner &amp;&amp; game.winner != &#39;null&#39;}" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                            <div class="player clearfix finalist" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player1), winner: game.player1 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player1).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="player clearfix finalist" data-id="" ng-class="{hovered: (hoveredItemId &amp;&amp; hoveredItemId == game.player2), winner: game.player2 == game.winner, finalist: tree.treeType === &#39;finals&#39; || tree.treeType === &#39;double_finals&#39;}">
+                                <!-- ngIf: PlayerService.getPlayerById(game.player2).image --><span title="?" ng-style="{paddingRight: getRightPadding() + &#39;px&#39;}" class="ng-binding" style="padding-right: 40px;">?</span>
+                                <div class="score ng-binding" ng-style="{borderLeftColor: &#39;#&#39; + settings.colors.borders, width: settings.scoresWidth + &#39;px&#39;}" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
+                            </div>
+                            <div class="border" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <div class="after" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);"></div>
+                            <!-- ngIf: settings.showDates && game.date -->
+                        </div>
+                        <div class="across" ng-style="{backgroundColor: &#39;#&#39; + settings.colors.borders}" style="background-color: rgb(51, 51, 51);">
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: game in tree.games -->
+                </div>
+            </div>
+        </div>
+        <!-- end ngRepeat: group in groups -->
+    </div>
+    <!-- ngIf: appData.isPublished -->
+<!--</div>-->
+
+</body>
+</html>
