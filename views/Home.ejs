@@ -11,19 +11,8 @@
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>March Madness Stock Matchup</title>
-
-    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
-    <!--<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>-->
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-    <!--<title>Brackets Ninja | Create HTML5 brackets for leagues, championships, and tournaments online</title>-->
-    <!--<meta name="description" content="Brackets Ninja - Create your own brackets, leagues, and tournaments on-the-fly">-->
-    <!--<meta name="keywords" content="Brackets Ninja, Brackets, Leagues, Tournaments, Manage online tournaments, Manage online league, Free brackets generator, create brackets online, manage tournament online, Create bracket in 2 minutes, Web Generator, Daniel Sternlicht">-->
-    <!--<link rel="SHORTCUT ICON" href="https://cdn.bracketsninja.com/public/favicon.ico">-->
-    <!--<meta property="og:image" content="https://cdn.bracketsninja.com/public/public_icon.png">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">-->
     <link rel="stylesheet" href="../assets/css/styleBrackets.css">
-
+    <title>Jungle Tournament</title>
 </head>
 
 <body>
@@ -32,83 +21,47 @@
         <p class="intro" id="intro">Jungle</p>
         <h1 id="headline">Tournament</h1>
         <p class="year"><i class="fa fa-star"></i> 2019 <i class="fa fa-star"></i></p>
-        <!--<p>Ballin' Outta Control</p>-->
     </div>
 </header>
-<%= locals.nbPools%>
+<% let d = [8,4,2,1] %>
+<% let e = [90,180,360,720] %>
+<% locals.nbPools%>
     <div class="league">
         <div class="group_wrapper ng-scope" style="width: 820px;">
             <div class="tree_wrapper clearfix">
-                <%for(let j = 0; j < 4;j++){ %> //nb de tables
-                    <div class="tree_group first first ng-valid">
-                        <!--<%for(let i = 0; i < 8;i++){ %> //nb combats dans la table-->
-                        <div class="game_wrapper ng-scope second"    style="height: 90px; width: 160px;">
-                            <div class="game ng-isolate-scope"   style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
-                                <div class="player clearfix" data-id="" >
+                <%for(let j = 0; j < 4;j++){ %>
+                <% if (j == 0) {%>
+                    <div class="tree_group first ng-valid">
+                <% }else if (j == 3) { %>
+                    <div class="tree_group finals ng-valid">
+                <% }else { %>
+                    <div class="tree_group ng-valid">
+                <% } %>
+                        <%for(let i = 0; i < d[j];i++){ %>
+                        <div class="game_wrapper ng-scope" style="height: <%= e[j] %>px; width: 160px;">
+                            <div class="game ng-isolate-scope" style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">
+                                <div class="player clearfix">
                                     <span title="?" class="ng-binding" style="padding-right: 40px;">?</span>
                                     <div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
                                 </div>
-                                <div class="player clearfix" data-id="24b67a79ce42e68443df72f6a3708048" >
+                                <div class="player clearfix">
                                     <span title="Hippopotame" class="ng-binding" style="padding-right: 40px;">Hippopotame</span>
                                     <div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">--</div>
                                 </div>
                                 <div class="border" style="background-color: rgb(51, 51, 51);"></div>
                                 <div class="after" style="background-color: rgb(51, 51, 51);"></div>
                             </div>
-                            <%  if (i % 2 == (j + 1) % 2){%>
-                                <div class="across" style="background-color: rgb(51, 51, 51);"></div>
+                            <%  if (i % 2 == 0){%>
+                                <div class="across top" style="background-color: rgb(51, 51, 51);"></div>
+                            <% } else { %>
+                                <div class="across bottom" style="background-color: rgb(51, 51, 51);"></div>
                             <%}%>
                         </div>
-                    <!--<%}%>-->
+                    <%}%>
                     </div>
                 <%}%>
-                <!--<div class="tree_group first  first  ng-valid">-->
-                    <!--<%for(let i = 0; i< 4;i++){ %>-->
-                    <!--<div class="game_wrapper ng-scope"    style="height: 180px; width: 160px;">-->
-                        <!--<div class="game ng-isolate-scope"   style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">-->
-                            <!--<div class="player clearfix" data-id="" >-->
-                                <!--<span title="?" class="ng-binding" style="padding-right: 40px;">?</span>-->
-                                <!--<div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
-                            <!--</div>-->
-                            <!--<div class="player clearfix" data-id="" >-->
-                                <!--<span title="?" class="ng-binding" style="padding-right: 40px;">?</span>-->
-                                <!--<div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
-                            <!--</div>-->
-                            <!--<div class="border" style="background-color: rgb(51, 51, 51);"></div>-->
-                            <!--<div class="after" style="background-color: rgb(51, 51, 51);"></div>-->
-                        <!--</div>-->
-                        <!--<%  if (i % 2 ==0){%>-->
-                            <!--<div class="across" style="background-color: rgb(51, 51, 51);"></div>-->
-                        <!--<%}%>-->
-                    <!--</div>-->
-                    <!--<%}%>-->
-                <!--</div>-->
-                <!--<div class="tree_group finals  finals  ng-valid"     >-->
-                    <!--&lt;!&ndash; ngRepeat: game in tree.games &ndash;&gt;-->
-                    <!--<div class="game_wrapper ng-scope"    style="height: 360px; width: 160px;">-->
-                        <!--<div class="game ng-isolate-scope"   style="color: rgb(255, 255, 255); background: rgb(34, 34, 34); border-color: rgb(51, 51, 51); width: 160px;">-->
-                            <!--<div class="player clearfix finalist" data-id="" >-->
-                                <!--<span title="?" class="ng-binding" style="padding-right: 40px;">?</span>-->
-                                <!--<div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
-                            <!--</div>-->
-                            <!--<div class="player clearfix finalist" data-id="" >-->
-                                <!--<span title="?" class="ng-binding" style="padding-right: 40px;">?</span>-->
-                                <!--<div class="score ng-binding" style="border-left-color: rgb(51, 51, 51); width: 35px;">&#45;&#45;</div>-->
-                            <!--</div>-->
-                            <!--<div class="border" style="background-color: rgb(51, 51, 51);"></div>-->
-                            <!--<div class="after" style="background-color: rgb(51, 51, 51);"></div>-->
-                        <!--</div>-->
-                        <!--<div class="across" style="background-color: rgb(51, 51, 51);">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; end ngRepeat: game in tree.games &ndash;&gt;-->
-                <!--</div>-->
             </div>
         </div>
-        <!-- end ngRepeat: group in groups -->
     </div>
-    <!-- ngIf: appData.isPublished -->
-<!--</div>-->
-
 </body>
 </html>

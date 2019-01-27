@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
 	res.render('Home', { title: 'Express' });
 });
 
-
 router.get('/createPools', function(req, res, next) {
 	let sql1;
 	let sql = "SELECT * FROM FirstPool";
