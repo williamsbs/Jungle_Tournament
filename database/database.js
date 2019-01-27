@@ -11,7 +11,8 @@ const connection = mysql.createPool({
 	database: "jungledb",
 	connectionLimit: 10,
 	getConnection: 0,
-	acquireTimeout: 10000
+	acquireTimeout: 10000,
+	multipleStatements: true
 });
 
 module.exports = connection;
